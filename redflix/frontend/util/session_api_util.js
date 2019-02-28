@@ -16,7 +16,6 @@ export const signup = newUser => {
 };
 
 export const login = user => {
-  
     return (
     $.ajax({
         url: '/api/session', 

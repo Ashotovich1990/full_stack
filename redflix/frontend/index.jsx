@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', ()=> {
     window.signup = SessionApiUtil.signup;
     window.logout = SessionApiUtil.logout;
     // test
-
+    
     let store;
     if (window.currentUser) {
         store = configureStore(
@@ -18,13 +18,23 @@ document.addEventListener('DOMContentLoaded', ()=> {
         session: 
         { id: window.currentUser.id},
         entities: {
-        users: {
-            [window.currentUser.id]: window.currentUser 
+        users: 
+            {
+            [window.currentUser.id]: window.currentUser,
+            demoId: {id: 7, username: "Guest", password: "password"},
             }
         }
         });
     } else {
-        store = configureStore();
+        store = configureStore(
+        {
+        entities: {
+        users: 
+            {
+            demoId: {id: 7, username: "Guest", password: "password"},
+            }
+        }
+        });
     }
 
     window.getState = store.getState;

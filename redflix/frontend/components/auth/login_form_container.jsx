@@ -5,11 +5,14 @@ import {login} from '../../actions/session_actions';
 const mapStateToProps = (state) => ({
     currentUser: state.entities.users[state.session.id],
     errors: state.errors.sessionErrors,
-    formType: "Log In",
+    formType: "Sign In",
+    formOutInfo: "Don't have an account?",
+    demoUser: state.entities.users.demoId,
 });
 
 const mapDispatchToProps = dispatch => ({
     processForm: (user) => dispatch(login(user)),
+    login: (user) => dispatch(login(user))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);

@@ -7,8 +7,7 @@ import LoginFormContainer from './auth/login_form_container';
 
 const App = () => (
     <div>
-        <header>
-            <h1>RedFlix</h1>
+        <header id="main-header">
             <WelcomeContainer />
         </header>
 

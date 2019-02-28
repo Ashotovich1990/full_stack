@@ -10,7 +10,7 @@ const usersReducer = (oldState = {}, action) => {
         newState[action.user.id] = action.user;
         return newState;
       case LOGOUT_CURRENT_USER:
-        return {};
+        return oldState;
       default:
         return oldState;
   }

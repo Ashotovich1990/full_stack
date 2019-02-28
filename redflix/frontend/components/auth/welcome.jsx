@@ -14,15 +14,20 @@ class Welcome extends React.Component {
 
     render() {
       let content = this.props.currentUser ? 
-        (<div>
-         <h3>Welcome, {this.props.currentUser.username}</h3>
-         <button onClick={this.handleClick}>Log Out</button>
-         </div> ) : ( <div>
-             <Link to="/signup">Sign Up</Link>
-             <Link to="/login">Log In</Link>
-         </div> );
+        (<div className="welcome-user">
+           <h3 id="message">Welcome, {this.props.currentUser.username}</h3>
+           <button className="signout-button" onClick={this.handleClick}>Sign Out</button>
+         </div> ) : 
+        (<div >
+             {/* <Link to="/signup" className="buttons" >Sign Up</Link> */}
+             <Link to="/login" className="signin-button">Sign In</Link>
+         </div>);
        
-       return content;
+       return (
+       <div className="welcome-new">
+       <h1 id="main-logo">RedFlix</h1>
+         {content}
+       </div> );
     }
 }
 
