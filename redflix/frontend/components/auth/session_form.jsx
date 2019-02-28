@@ -27,6 +27,8 @@ class SessionForm extends React.Component {
     }
     
     content() {
+        const errors = this.props.errors;
+
         let link;
         if (this.props.formType === 'Sign In') {
             link = <Link className="form-link" to='/signup'>Sign Up</Link>;
@@ -59,6 +61,7 @@ class SessionForm extends React.Component {
              <label>
                 <input placeholder="Password" type="password" value={this.state.password} onChange={this.update("password")}/>
              </label>
+             <ul id="errors">{errors.map(err => <li>{err}</li>)}</ul>
              <input type="submit" value={this.props.formType}/>
              <input id="demo-button" type="submit" value="DEMO" onClick={this.handleDemo}/>
             <p>{this.props.formOutInfo} {link}</p>
@@ -70,11 +73,9 @@ class SessionForm extends React.Component {
     }
 
     render() {
-        const errors = this.props.errors;
         const content = this.content();
         return (
             <div>
-              {errors}
               {content}
             </div>
         )
