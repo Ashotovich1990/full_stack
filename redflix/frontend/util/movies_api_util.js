@@ -1,25 +1,25 @@
-export const fetchMovies = () => {
+export const fetchGenres = () => {
     return (
       $.ajax({
-          url: '/api/movies',
+          url: '/api/genres',
           method: 'GET',
       })
     );
 };
 
-export const fetchMovie = movieId => {
+export const fetchGenre = GenreId => {
     return (
         $.ajax({
-            url: `/api/movies/${movieId}`,
+            url: `/api/genres/${GenreId}`,
             method: 'get',
         })
     )
 };
 
-export const fetchGenre = genreId => {
+export const fetchMovie = MovieId => {
     return (
         $.ajax({
-            url: `/api/genres/${genreId}/movies`,
+            url: `/api/movies/${MovieId}`,
             method: 'get',
         })
     )

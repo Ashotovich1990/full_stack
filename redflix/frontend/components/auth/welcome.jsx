@@ -23,8 +23,9 @@ class Welcome extends React.Component {
          </div>);
        
        return (
+
        <div className="welcome-new">
-       <h1 id="main-logo">RedFlix</h1>
+       <h1 id="main-logo">RedFlix</h1> 
          {content}
        </div> );
     }

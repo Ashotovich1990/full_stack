@@ -75,7 +75,7 @@ class SessionForm extends React.Component {
     render() {
         const content = this.content();
         return (
-            <div>
+            <div className = "splash-background">
               {content}
             </div>
         )

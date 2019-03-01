@@ -4,6 +4,8 @@ import {Route, Switch} from 'react-router-dom';
 import SignupFormContainer from './auth/signup_form_container';
 import LoginFormContainer from './auth/login_form_container';
 import {WelcomeOffer} from './auth/welcome_offer'
+import GenreIndexContainer from './genres/genre_index_container';
+import {AuthRoute, ProtectedRoute} from '../util/route_util';
 
 const App = () => (
     <div>
@@ -11,8 +13,9 @@ const App = () => (
             <WelcomeContainer />
         </header>
         <Switch>
-        <Route exact path="/signup" component={SignupFormContainer} />
-        <Route exact path="/login" component={LoginFormContainer} />
+        <ProtectedRoute exact path="/browse" component={GenreIndexContainer}/>
+        <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        <AuthRoute exact path="/login" component={LoginFormContainer} />
         <Route exact patch="/" component={WelcomeOffer}/>
         </Switch>
 

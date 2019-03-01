@@ -3,7 +3,7 @@ html {
    }
    
    body {
-       background-image: url("background-img.jpg");
+       background: black;
    }
    
    #session-title {
@@ -11,7 +11,27 @@ html {
        font-size: 200%;
    }
    
+   .splash-background {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-image: url("background-img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(7, 7, 7, 0.8);
+    background-blend-mode: multiply;
+    z-index: -1;
+   }
+
    #session-form{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+
      display: flex;
      align-items: center;
      justify-content: center;
@@ -20,9 +40,9 @@ html {
    form { 
        background-color: rgba(0,0,0,.75);
        border-radius: 4px;
-       min-height: 515px;
-       padding: 60px 68px 40px;
-       margin-bottom: 90px;
+    //    min-height: 515px;
+       padding: 60px 68px 150px;
+    //    margin-bottom: 90px;
        width: 300px;
        color: gray;
     }
@@ -71,7 +91,7 @@ html {
     #errors {
         color: red;
     }
-
+     
     .signup-offer {
      color: white;
      display: inline;

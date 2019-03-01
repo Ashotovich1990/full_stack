@@ -2,7 +2,6 @@ import * as MovieApiUtil from '../util/movies_api_util'
 
 export const RECEIVE_MOVIES = "RECEIVE_MOVIES";
 export const RECEIVE_MOVIE = "RECEIVE_MOVIE";
-export const RECEIVE_GENRE = "RECEIVE_GENRE";
 
 const receiveMovies = payload => {
     return (
@@ -17,8 +16,8 @@ const receiveMovie = movie => ({
     movie,
 })
 
-export const fetchMovies = () => dispatch => (
-    MovieApiUtil.fetchMovies()
+export const fetchGenres = () => dispatch => (
+    MovieApiUtil.fetchGenres()
     .then(res => dispatch(receiveMovies(res)))
 )
 
