@@ -7,13 +7,7 @@ json.payload do
         end
     end
 
-    json.genres do 
-        @movies.each do |movie| 
-            movie.genres.each do |genre|
-                json.set! genre.id do 
-                json.extract! genre, :name
-                end
-            end
-        end
-    end
+    json.genres @genres
+    
 end
+
