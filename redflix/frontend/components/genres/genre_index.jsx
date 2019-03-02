@@ -12,16 +12,15 @@ class GenreIndex extends React.Component {
 
     render() {
         const genreNames = Object.keys(this.props.genreLists).map((key) => (
-        <GenreIndexItem key={key} 
+        <GenreIndexItem
+        key={key} 
         genreName={this.props.genreNames[key]} 
         movies={this.props.genreLists[key].map(movie_id => this.props.movies[movie_id])} />
         )
         )
         return (
-         <div>
-            <ul className="genre-names">
+         <div className="genre-container">
                {genreNames}
-            </ul>
          </div>
         );
     }

@@ -23,6 +23,10 @@ class SessionForm extends React.Component {
         this.props.processForm(this.state);
     }
 
+    componentWillUnmount() {
+        this.props.clearErrors();
+    }
+
     handleDemo (e) {
         e.preventDefault();
         this.props.login(this.props.demoUser);
@@ -33,9 +37,9 @@ class SessionForm extends React.Component {
 
         let link;
         if (this.props.formType === 'Sign In') {
-            link = <Link onClick={this.props.clearErrors} className="form-link" to='/signup'>Sign Up</Link>;
+            link = <Link className="form-link" to='/signup'>Sign Up</Link>;
         } else if (this.props.formType === 'Sign Up') {
-            link = <Link onClick={this.props.clearErrors} className="form-link" to='/login'>Sign In</Link>;
+            link = <Link className="form-link" to='/login'>Sign In</Link>;
         }
         
         let email;

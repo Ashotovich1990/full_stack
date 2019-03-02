@@ -1,10 +1,10 @@
 import React from 'react';
 
 export const GenreIndexItem = props => (
-    <div>
+    <div className="genre">
           <h1>{props.genreName}</h1>
-        <ul>
-          {props.movies.map(movie => <li>{movie.title}</li>)}
+        <ul className='genre-list'>
+          {props.movies.map(movie => <li><img src={movie.poster} alt=""/></li>)}
         </ul>
     </div>
 )
