@@ -8,11 +8,13 @@ class SessionForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
         this.content = this.content.bind(this);
+        this.errors = [];
+      
     }
 
     update(field) {
         return (e) => {
-            this.setState({ [field]: e.target.value})
+            this.setState({ [field]: e.target.value});
         }
     };
 
@@ -25,15 +27,15 @@ class SessionForm extends React.Component {
         e.preventDefault();
         this.props.login(this.props.demoUser);
     }
-    
+
     content() {
-        const errors = this.props.errors;
+       
 
         let link;
         if (this.props.formType === 'Sign In') {
-            link = <Link className="form-link" to='/signup'>Sign Up</Link>;
+            link = <Link onClick={this.props.clearErrors} className="form-link" to='/signup'>Sign Up</Link>;
         } else if (this.props.formType === 'Sign Up') {
-            link = <Link className="form-link" to='/login'>Sign In</Link>;
+            link = <Link onClick={this.props.clearErrors} className="form-link" to='/login'>Sign In</Link>;
         }
         
         let email;
@@ -61,7 +63,7 @@ class SessionForm extends React.Component {
              <label>
                 <input placeholder="Password" type="password" value={this.state.password} onChange={this.update("password")}/>
              </label>
-             <ul id="errors">{errors.map(err => <li>{err}</li>)}</ul>
+             <ul id="errors">{this.props.errors.map((err,idx) => <li key={idx}>{err}</li>)}</ul>
              <input type="submit" value={this.props.formType}/>
              <input id="demo-button" type="submit" value="DEMO" onClick={this.handleDemo}/>
             <p>{this.props.formOutInfo} {link}</p>

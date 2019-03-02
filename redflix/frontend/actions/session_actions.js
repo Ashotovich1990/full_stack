@@ -22,6 +22,11 @@ const receiveSessionErrors = errors => {
 };
 }
 
+export const clearErrors = () => ({
+    type: RECEIVE_SESSION_ERRORS,
+    errors: [],
+});
+
 export const logout = () => dispatch => (
     SessionApiUtil.logout()
     .then(
