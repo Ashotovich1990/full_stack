@@ -1,5 +1,5 @@
 import React from 'react';
-import {GenreIndexItem} from './genre_index_item';
+import GenreIndexItem from './genre_index_item';
 
 class GenreIndex extends React.Component {
     constructor(props) {
