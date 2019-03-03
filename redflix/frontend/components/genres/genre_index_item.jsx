@@ -1,5 +1,6 @@
 import React from 'react';
-import MovieListItemContainer from './movies/movie_list_item_container'
+import MovieListItemContainer from './movies/movie_list_item_container';
+import {Link} from 'react-router-dom';
 
 class GenreIndexItem extends React.Component {
   constructor(props) {
@@ -22,7 +23,8 @@ class GenreIndexItem extends React.Component {
   render () {
     return (
       <div className="genre">
-            <h1>{this.props.genreName}</h1>
+            <Link onClick={() => this.props.fetchGenre(this.props.genreId)}
+            to={`/browse/${this.props.genreId}`}>{this.props.genreName}</Link>
           <ul className='genre-list'>
             {this.props.movies.map(movie => (<li key={movie.id}
             onMouseEnter={this.onMouseEnterHandle(movie.id)}

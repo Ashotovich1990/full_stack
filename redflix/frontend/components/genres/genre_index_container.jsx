@@ -1,8 +1,10 @@
 import {connect} from 'react-redux';
 import GenreIndex from './genre_index';
-import {fetchGenres} from '../../actions/movies_actions';
+import {fetchGenres, fetchGenre} from '../../actions/movies_actions';
+import {withRouter} from 'react-router-dom';
 
-const mSP = state => ({
+const mSP = (state,ownProps) => ({
+    genreId: ownProps.match.params.genreId,
     movies: state.entities.movies, 
     genreLists: state.entities.genreLists,
     genreNames: state.entities.genreNames,
@@ -10,6 +12,7 @@ const mSP = state => ({
 
 const mDP = dispatch => ({
     fetchGenres: () => dispatch(fetchGenres()),
+    fetchGenre: genreId => dispatch(fetchGenre(genreId)),
 });
 
-export default connect(mSP,mDP)(GenreIndex)
+export default withRouter(connect(mSP,mDP)(GenreIndex));

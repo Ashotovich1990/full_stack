@@ -13,12 +13,12 @@ const App = () => (
             <WelcomeContainer />
         </header>
         <Switch>
-        <ProtectedRoute exact path="/browse" component={GenreIndexContainer}/>
-        <AuthRoute exact path="/signup" component={SignupFormContainer} />
-        <AuthRoute exact path="/login" component={LoginFormContainer} />
-        <AuthRoute exact patch="/" component={WelcomeOffer}/>
+            <ProtectedRoute exact path="/browse/:genreId" component={GenreIndexContainer}/>
+            <ProtectedRoute exact path="/browse" component={GenreIndexContainer}/>
+            <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            <AuthRoute exact path="/login" component={LoginFormContainer} />
+            <AuthRoute exact patch="/" component={WelcomeOffer}/>
         </Switch>
-
     </div>
 )
 
