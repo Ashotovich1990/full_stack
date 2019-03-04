@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import {GenreNavBar} from './genre_nav_bar';
 
 class Welcome extends React.Component {
     constructor(props) {
@@ -15,6 +16,7 @@ class Welcome extends React.Component {
     render() {
       let content = this.props.currentUser ? 
         (<div className="welcome-user">
+           <GenreNavBar genres={this.props.genres}/>
            <h3 id="message">{this.props.currentUser.username}</h3>
            <button className="signout-button" onClick={this.handleClick}>Sign Out</button>
          </div> ) : 
