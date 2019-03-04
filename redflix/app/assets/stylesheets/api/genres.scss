@@ -148,5 +148,27 @@ img {
     }
 }
 
+.genre-browse {
+    display: flex;
+    flex-direction: row;
+   #brows-icon {
+       font-size: 80%;
+       margin-left: 10px;
+       margin-top: auto;
+   }
+}
+
+.my-list-empty {
+    display: flex;
+    flex-direction: row;
+   #my-list-message {
+       display: inline-block;
+       font-size: 100%;
+       margin-left: auto;
+       margin-right: 50%;
+       margin-top: 20%;
+   }
+}
+
 
 
