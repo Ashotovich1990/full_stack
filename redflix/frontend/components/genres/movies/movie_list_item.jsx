@@ -10,19 +10,25 @@ class MovieListItem extends React.Component {
             backgroundSize: 'cover',
             alignItems: 'stretch',
         }
+        this.state = { DropBar: false}
     }
     
     render() {
         if (this.props.hovered === this.props.content.id) {
         return  (
-        <div style={this.style}>
-         <div className="movie-list-item-content">
-           <div className="movie-item-bar">
-             <div id={`maturity-rating-${this.props.content.maturity_rating}`}>{this.props.content.maturity_rating}</div>
-             <div id="movie-year">{this.props.content.year}</div>
-           </div>
-           <div id="movie-title">{this.props.content.title}</div>
-         </div>
+        <div>
+            <div style={this.style}>
+              <div className="movie-list-item-content">
+                <div className="movie-item-bar">
+                  <div id={`maturity-rating-${this.props.content.maturity_rating}`}>{this.props.content.maturity_rating}</div>
+                  <div id="movie-year">{this.props.content.year}</div>
+                </div>
+                <div id="movie-title">{this.props.content.title}</div>
+              </div>
+            </div>
+          <div>
+              <MovieListDropBar open={this.state.dropBar} content={this.props.content}/>
+          </div>
         </div>
         )
         } else {
