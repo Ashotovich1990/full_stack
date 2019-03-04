@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieListItemContainer from './movies/movie_list_item_container';
 import {Link} from 'react-router-dom';
+import MovieDropbarContainer from './movies/movie_list_dropbar_container';
 
 class GenreIndexItem extends React.Component {
   constructor(props) {
@@ -30,8 +31,9 @@ class GenreIndexItem extends React.Component {
             {this.props.movies.map(movie => (<li key={movie.id}
             onMouseEnter={this.onMouseEnterHandle(movie.id)}
             onMouseLeave={this.onMouseLeaveHandle}
-            ><MovieListItemContainer hovered={this.state.hovered} content={movie}/></li>))}
+            ><MovieListItemContainer genreId={this.props.genreId} hovered={this.state.hovered} content={movie}/></li>))}
           </ul>
+          <MovieDropbarContainer genreId={this.props.genreId}/>
       </div>
     );
   }

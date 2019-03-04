@@ -5,6 +5,7 @@ import genreListsReducer from './genre_lists_reducer';
 import genreNamesReducer from './genre_names_reducer';
 import userWatchlistsReducer from './user_watchlist_reducer';
 
+
 const entitiesReducer = combineReducers({
     users: usersReducer,
     movies: moviesReducer,

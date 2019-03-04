@@ -14,6 +14,10 @@ class GenreIndex extends React.Component {
         }
     }
 
+    componentDidUpdate() {
+       this.props.receiveDropDownMovie(null, null)
+    }
+
     componentWillUnmount() {
         if (this.props.genreId) {
           this.props.fetchGenre(this.props.genreId);

@@ -1,4 +1,5 @@
 import React from 'react';
+// import MovieDropbarContainer from './movie_list_dropbar_container';
 
 class MovieListItem extends React.Component {
     constructor(props) {
@@ -10,7 +11,11 @@ class MovieListItem extends React.Component {
             backgroundSize: 'cover',
             alignItems: 'stretch',
         }
-        this.state = { DropBar: false}
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.props.receiveDropDownMovie(this.props.content.id, this.props.genreId)
     }
     
     render() {
@@ -23,12 +28,10 @@ class MovieListItem extends React.Component {
                   <div id={`maturity-rating-${this.props.content.maturity_rating}`}>{this.props.content.maturity_rating}</div>
                   <div id="movie-year">{this.props.content.year}</div>
                 </div>
-                <div id="movie-title">{this.props.content.title}</div>
+                <div  id="movie-title">{this.props.content.title}</div>
+                <div id="open-dropdown-movie" onClick={this.handleClick}>More Info</div>
               </div>
             </div>
-          <div>
-              <MovieListDropBar open={this.state.dropBar} content={this.props.content}/>
-          </div>
         </div>
         )
         } else {
