@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 class MovieListItem extends React.Component {
     constructor(props) {
         super(props)
@@ -12,17 +11,18 @@ class MovieListItem extends React.Component {
             alignItems: 'stretch',
         }
     }
-
+    
     render() {
         if (this.props.hovered === this.props.content.id) {
-      
         return  (
         <div style={this.style}>
-         <ul className="movie-list-item-content">
-           <li id="movie-title">{this.props.content.title}</li>
-           <li id="movie-year">year {this.props.content.year}</li>
-           <li id="movie-rating">rating {this.props.content.maturity_rating}</li>
-         </ul>
+         <div className="movie-list-item-content">
+           <div className="movie-item-bar">
+             <div id={`maturity-rating-${this.props.content.maturity_rating}`}>{this.props.content.maturity_rating}</div>
+             <div id="movie-year">{this.props.content.year}</div>
+           </div>
+           <div id="movie-title">{this.props.content.title}</div>
+         </div>
         </div>
         )
         } else {

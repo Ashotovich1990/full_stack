@@ -23,8 +23,9 @@ class GenreIndexItem extends React.Component {
   render () {
     return (
       <div className="genre">
-            <Link onClick={() => this.props.fetchGenre(this.props.genreId)}
-            to={`/browse/${this.props.genreId}`}>{this.props.genreName}</Link>
+            <Link id="link-to-new-page"
+            onClick={() => this.props.fetchGenre(this.props.genreId)}
+            to={`/browse/${this.props.genreId}`}>{this.props.genreName} >></Link>
           <ul className='genre-list'>
             {this.props.movies.map(movie => (<li key={movie.id}
             onMouseEnter={this.onMouseEnterHandle(movie.id)}

@@ -32,6 +32,7 @@ class GenreIndex extends React.Component {
         movies={this.props.genreLists[key].map(movie_id => this.props.movies[movie_id])} />
         )
         )
+        
         return (
          <div className="genre-container">
                {genreNames}

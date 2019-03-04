@@ -15,6 +15,8 @@
     json.genreLists @genre_lists
 
     json.genreNames @genre_names
+
+    json.myList @my_watchlist
     
 
 

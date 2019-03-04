@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', ()=> {
     window.fetchGenres = MovieApiUtil.fetchGenres;
     window.fetchMovie = MovieApiUtil.fetchMovie;
     window.fetchGenre = MovieApiUtil.fetchGenre; 
+    window.addMovie = MovieApiUtil.addMovie;
+    window.removeMovie = MovieApiUtil.removeMovie;
     
     // test
     
@@ -28,8 +30,12 @@ document.addEventListener('DOMContentLoaded', ()=> {
             {
             [window.currentUser.id]: window.currentUser,
             demoId: {id: 7, username: "Guest", password: "password"},
+            },
+        genreNames: 
+            {
+                '0': 'My List'
             }
-        }
+        },
         });
     } else {
         store = configureStore(

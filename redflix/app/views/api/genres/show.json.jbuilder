@@ -19,3 +19,4 @@
 
     json.genreNames @genre_names
 
+    json.myList @my_watchlist
