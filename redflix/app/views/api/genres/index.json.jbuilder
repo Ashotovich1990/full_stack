@@ -8,6 +8,10 @@
             json.poster url_for(movie.photo)
             end
 
+            if movie.video.attached?
+            json.video url_for(movie.video)
+            end
+
             end
         end
     end

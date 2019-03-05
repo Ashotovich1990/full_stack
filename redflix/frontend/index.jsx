@@ -7,6 +7,7 @@ import * as MovieApiUtil from './actions/movies_actions'
 // import * as MovieApiUtil from './util/movies_api_util'
 
 document.addEventListener('DOMContentLoaded', ()=> {
+    
     // test
     window.login = SessionApiUtil.login;
     window.signup = SessionApiUtil.signup;
@@ -53,4 +54,6 @@ document.addEventListener('DOMContentLoaded', ()=> {
     window.dispatch = store.dispatch;
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root)
+    console.log(document.getElementById("main-logo"));
+    document.getElementById("main-logo").click()
 })

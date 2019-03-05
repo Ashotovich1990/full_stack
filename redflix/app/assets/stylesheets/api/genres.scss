@@ -109,6 +109,15 @@ img {
     
 }
 
+.genre-movie-play {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -10000;
+    margin-bottom: 5px;
+}
+
 .genre-list {
     margin-top: 15px; 
     display: flex;

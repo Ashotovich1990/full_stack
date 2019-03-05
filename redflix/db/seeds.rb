@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# require 'open-uri'
+require 'open-uri'
 # file = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/andrei-rublev.jpg');
 # # movie.photo.attach(io: file, filename" whatever) 
 # movie.save
@@ -102,3 +102,8 @@ MovieList.create(movie_id: 22, genre_id: 2, sample: "true")
 MovieList.create(movie_id: 23, genre_id: 2, sample: "true")
 
 
+m = Movie.first 
+ph = open('https://s3-us-west-1.amazonaws.com/file-up-load-2-dev/Andrei+Rublev.jpg')
+v = open('https://s3-us-west-1.amazonaws.com/file-up-load-2-dev/Andrei+Rublev+.mp4')
+m.video.attach(io: v, filename: 'AndreiRublev.mp4')
+m.photo.attach(io: ph, filename: 'AndreiRublev.jpg')

@@ -36,7 +36,7 @@ class MovieListItem extends React.Component {
                   <div id="movie-year">{this.props.content.year}</div>
                 </div>
                 <div  id="movie-title">{this.props.content.title}</div>
-                <div id="open-dropdown-movie" onClick={this.handleClick}><i class="fas fa-angle-double-down"></i></div>
+                <div id="open-dropdown-movie" onClick={this.handleClick}><i className="fas fa-angle-double-down"></i></div>
               </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import GenreIndexItem from './genre_index_item';
+import GenreMovieDisplayContainer from './movies/genre_movie_display_container';
 
 class GenreIndex extends React.Component {
     constructor(props) {
@@ -91,6 +92,7 @@ class GenreIndex extends React.Component {
         
         return (
          <div className="genre-container">
+                <GenreMovieDisplayContainer genreMovieId="1" />
                {genreMain}
                {genreNames}
          </div>

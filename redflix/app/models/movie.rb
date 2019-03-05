@@ -29,6 +29,8 @@ class Movie < ApplicationRecord
     through: :castings,
     source: :actor
 
-    has_one_attached :photo
+    has_one_attached :photo 
+
+    has_one_attached :video
 
 end
