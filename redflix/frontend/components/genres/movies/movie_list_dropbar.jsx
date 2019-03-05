@@ -25,12 +25,19 @@ class MovieDropbar extends React.Component {
         const movie = this.props.movies[this.props.dropDownMovie.movieId]
           if ( movie && (this.props.genreId === this.props.dropDownMovie.genreId)) {
             return (
-              <div className="movie-dropbar">
-                <div id="movie-dropbar-description">{movie.description}</div>
-                <img id="movie-dropbar-poster" src={movie.poster}/> 
-                <div onClick={this.handleClose}>Close</div>
-                <div onClick={this.handleAdd}>Add Move</div>
-                <div onClick={this.handleRemove}>Add Move</div>
+              <div id='movie-ad' className="movie-dropbar">
+               <div className='dropbar-info-container'>
+                 <div id="movie-dropbar-title">{movie.title}</div>
+                 <div id="movie-dropbar-description">{movie.description}</div>
+                 <div className='dropdown-buttons'>
+                    <div id='add-movie-button' onClick={this.handleAdd}>Add Move</div>
+                    <div id='remove-movie-button' onClick={this.handleRemove}>Remove Move</div>
+                 </div>
+                </div>
+                <div className='dropbar-poster-container'>
+                    <img id='dropdown-poster' src={movie.poster}/>
+                    <div id='dropdown-close' onClick={this.handleClose}><i class="fas fa-times"></i></div>
+                </div>
               </div>
             )
         } else {

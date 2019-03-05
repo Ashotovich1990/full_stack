@@ -12,10 +12,17 @@ class MovieListItem extends React.Component {
             alignItems: 'stretch',
         }
         this.handleClick = this.handleClick.bind(this);
+        this.scrollToItem = this.scrollToItem.bind(this);
     }
-
+    
+    scrollToItem() {
+      const scrollItem = document.getElementById("movie-ad");
+      scrollItem.scrollIntoView(false);
+    }
     handleClick() {
-        this.props.receiveDropDownMovie(this.props.content.id, this.props.genreId)
+        setTimeout(()=>this.scrollToItem(), 0)
+        this.props.receiveDropDownMovie(this.props.content.id, this.props.genreId);
+        
     }
     
     render() {
@@ -29,7 +36,7 @@ class MovieListItem extends React.Component {
                   <div id="movie-year">{this.props.content.year}</div>
                 </div>
                 <div  id="movie-title">{this.props.content.title}</div>
-                <div id="open-dropdown-movie" onClick={this.handleClick}>More Info</div>
+                <div id="open-dropdown-movie" onClick={this.handleClick}><i class="fas fa-angle-double-down"></i></div>
               </div>
             </div>
         </div>

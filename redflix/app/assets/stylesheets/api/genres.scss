@@ -6,6 +6,7 @@
     margin-top: 5%;
     margin-left: 3%;
     color: white;
+    max-width: 100%;
 
     #link-to-new-page {
         font-size: 20px;
@@ -21,19 +22,89 @@ img {
 
 .genre {
     margin-top: 40px;
-    min-width: 100%;
-
+    max-width: 100%;
+    flex-direction: column;
+    display: flex;
+    
     .movie-dropbar {
-       max-width: 800px;
+       background-color: rgba(7, 7, 7, 0.8); 
+       width: 90%;
+       height: 600px;
        margin-top: 5%;
        display: flex;
-       float: left;
-       border: 5px solid red;
+       flex-direction: column;
+       border: 3px solid gray;
+       border-radius: 1px;
+       display: flex;
+       justify-content: space-between;
+       flex-direction: row;
+
+       .dropbar-info-container {
+          display: inherit;
+          flex-direction: column;
+       }
+
+       .dropbar-poster-container {
+          flex-direction: column;
+       }
 
        #movie-dropbar-description {
-           font: 500;
+           padding: 10%;
+           font-size: larger;
+           display: inline-flex;
+           top: 15%;
            color: white;
+           z-index: 4;
        }
+
+       #movie-dropbar-title {
+            padding: 10%;
+            font-size: xx-large;
+            display: inline-flex;;
+            // top: 5%;
+            color: white;
+            // z-index: 5;
+       }
+
+       #dropdown-close {
+           color: gray;
+           font: 900;
+           font-size: 40px;
+           position: relative;
+           top: -580px;
+           left: 390px;
+           z-index: 3;
+       }
+
+       #dropdown-poster {
+        height: 600px;
+        width: 450px;
+        z-index: -1;
+       }
+
+       .dropdown-buttons {
+        display: flex;
+        margin-top: auto;
+        margin-bottom: 20%;
+        margin-left: 10%;
+        margin-right: 50px;
+        justify-content: space-between;
+        z-index: 5;
+        
+       }
+
+       #add-movie-button, #remove-movie-button {
+           text-align: center;
+           padding-top: 10px;
+           font-size: 20px;
+           width: 150px;
+           height: 30px;
+           background: red;
+           border-radius: 3px;
+           
+       }
+
+
     }
     
 }
@@ -41,11 +112,14 @@ img {
 .genre-list {
     margin-top: 15px; 
     display: flex;
+    max-width: 100%;
 
     &:hover {
         .li {
             transform:
         translateX(-25%);
+        z-index: 5;
+        position: relative;
         }
     }
     
@@ -140,11 +214,12 @@ img {
         }
 
     #open-dropdown-movie {
-        display: inline-block;
-        font-size: 15px;
-        margin-left: 30%;
+        position: relative;
+        font-size: 200%;
+        margin-left: 45%;
+        margin-top: 20%;
         margin-bottom: 5%;
-        margin-top: 5px;
+        
     }
 }
 
