@@ -3,8 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .genre-container {
-    margin-top: 5%;
-    margin-left: 3%;
+    margin-top: -50px;
+    padding:0;
     color: white;
     max-width: 100%;
     overflow: hidden;
@@ -15,6 +15,14 @@
         color: white;
         text-decoration: none;
     }
+
+    .andy-fix-it {
+        position: relative;
+        top: -200px;
+        width: 100vw;
+        z-index: 5;
+        padding-left: 40px;
+    }
 }
 
 img {
@@ -22,11 +30,26 @@ img {
     height: 280px;
 }
 
-.my-list {
-    position: relative;
-    top: 25%;
-    height: 200%;
+.my-list-container {
+    padding-left: 3%;
+    padding-bottom: 3%;
+    color: white;
+    max-width: 100%;
     overflow: hidden;
+    margin-top: 5%;
+
+    #my-list-title {
+       padding-left: 3%; 
+       position: relative;
+       top: -41px;
+       font-size: -webkit-xxx-large;
+    }
+}
+
+.my-list {
+    margin-top: 10%;
+    /* height: 200%; */
+    /* overflow: hidden; */
     width: 100%;
 }
 
@@ -35,6 +58,7 @@ img {
     max-width: 100%;
     flex-direction: column;
     display: flex;
+}
     
     .movie-dropbar {
        background-color: rgba(7, 7, 7, 0.8); 
@@ -116,16 +140,13 @@ img {
 
     }
     
-}
+
 
 .genre-movie-play {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: auto;
-    z-index: -10000;
     margin-bottom: 5px;
+
 }
 
 .movie-list-movie-play {
@@ -139,7 +160,7 @@ img {
 }
 
 .genre-list {
-    margin-top: 15px; 
+    margin-top: -15px; 
     display: flex;
     max-width: 100%;
     margin-left: 2%;
@@ -178,16 +199,18 @@ img {
 
 }
 
-#move-arrow-left {
+.move-arrow-left {
+   display: block;
    position: relative;
-   top: -160px;
+   top: 160px;
    left: -1px;
    font-size: xx-large;
 }
 
-#move-arrow-right {
+.move-arrow-right {
+    display: block;
     position: relative;
-    top: -200px;
+    top: -160px;
     right: -1260px;
     font-size: xx-large;
     
@@ -292,14 +315,14 @@ img {
 .my-list-empty {
     display: flex;
     flex-direction: row;
-   #my-list-message {
-       display: inline-block;
-       font-size: 100%;
-       margin-left: auto;
-       margin-right: 50%;
-       margin-top: -25%;
-   }
+    color: white;
+    justify-content: space-around;
+    margin-top: 25%;
 }
 
-
+.search-empty-results {
+    color: white;
+    margin-top: 25%;
+    margin-left: 40%;
+}
 

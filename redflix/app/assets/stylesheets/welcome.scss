@@ -3,7 +3,11 @@
     flex-direction: row;
     align-items: flex-end;
     justify-content: space-between;
-    margin-bottom: 40%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 6;
+    // background: rgba(0,0,0,.5)
 }
 
 .welcome-user {
@@ -75,6 +79,10 @@
     min-width: 100px;
     max-width: 120px;
     border: none;
+}
+
+.search-box {
+    color: gray;
 }
 
 .signin-button {
