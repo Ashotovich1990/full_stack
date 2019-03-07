@@ -5,19 +5,39 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# Genre.destroy_all
+# Movie.destroy_all 
+# MovieList.destroy_all
+# Actor.destroy_all
+# Casting.destroy_all
 
-require 'open-uri'
+# require 'open-uri'
 # file = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/andrei-rublev.jpg');
 # # movie.photo.attach(io: file, filename" whatever) 
 # movie.save
 # :has_one_attached
+# andrei_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/andrei-rublev.jpg')
+
+
+# andrei_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/Andrei+Rublev+.mp4')
+# andrei.video.attach(io: andrei_v, filename: 'AndreiRublev.mp4')
+# andrei.photo.attach(io: andrei_p, filename: 'AndreiRublev.jpg')
+
+Genre.destroy_all
+Movie.destroy_all 
+MovieList.destroy_all
+Actor.destroy_all
+Casting.destroy_all
 
 Genre.create(name: "My List")
 Genre.create(name: "Trending Now")
 Genre.create(name: "New Releases")
 Movie.create(title: "Andrei Rublev", description: "Andrei Rublev is set against the background of 15th-century Russia. Although the film is only loosely based on the life of Andrei Rublev, it seeks to depict a realistic portrait of medieval Russia. Tarkovsky sought to create a film that shows the artist as a world-historic figure and Christianity as an axiom of Russia’s historical identity.", year: 1969, maturity_rating: "R")
+
 Movie.create(title: "Stalker", description: "The film depicts an expedition led by a figure known as the 'Stalker' to take his two clients—a melancholic writer seeking inspiration, and a professor seeking scientific discovery—to a mysterious restricted site known simply as the 'Zone', where there supposedly exists a room which grants a person's innermost desires. The trio travel through unnerving areas filled with the debris of modern society while engaging in many arguments.", year: 1979, maturity_rating: "PG13")
+
 Movie.create(title: "The Color of Pomegranates", description: "The Color of Pomegranates is a biography of the Armenian ashug Sayat-Nova (King of Song) that attempts to reveal the poet's life visually and poetically rather than literally. The film is presented with little dialogue using active tableaux which depict the poet's life in chapters: Childhood, Youth, Prince's Court (where he falls in love with a tsarina), The Monastery, The Dream, Old Age, The Angel of Death and Death.", year: 1969, maturity_rating: "PG13")
+
 MovieList.create(movie_id: 1, genre_id: 2)
 MovieList.create(movie_id: 1, genre_id: 3)
 MovieList.create(movie_id: 2, genre_id: 2)
@@ -52,12 +72,12 @@ MovieList.create(movie_id: 4, genre_id: 4, sample: "true")
 MovieList.create(movie_id: 5, genre_id: 4, sample: "true")
 MovieList.create(movie_id: 6, genre_id: 4, sample: "true")
 MovieList.create(movie_id: 7, genre_id: 4, sample: "true")
-MovieList.create(movie_id: 8, genre_id: 4, sample: "true")
-MovieList.create(movie_id: 9, genre_id: 4, sample: "true")
-MovieList.create(movie_id: 10, genre_id: 4, sample: "true")
-MovieList.create(movie_id: 11, genre_id: 4, sample: "true")
-MovieList.create(movie_id: 12, genre_id: 4, sample: "true")
-MovieList.create(movie_id: 13, genre_id: 4, sample: "true")
+MovieList.create(movie_id: 8, genre_id: 4, sample: "false")
+MovieList.create(movie_id: 9, genre_id: 4, sample: "false")
+MovieList.create(movie_id: 10, genre_id: 4, sample: "false")
+MovieList.create(movie_id: 11, genre_id: 4, sample: "false")
+MovieList.create(movie_id: 12, genre_id: 4, sample: "false")
+MovieList.create(movie_id: 13, genre_id: 4, sample: "false")
 
 Genre.create(name: "Dramas")
 
@@ -86,11 +106,11 @@ MovieList.create(movie_id: 15, genre_id: 5, sample: "true")
 MovieList.create(movie_id: 16, genre_id: 5, sample: "true")
 MovieList.create(movie_id: 17, genre_id: 5, sample: "true")
 MovieList.create(movie_id: 18, genre_id: 5, sample: "true")
-MovieList.create(movie_id: 19, genre_id: 5, sample: "true")
-MovieList.create(movie_id: 20, genre_id: 5, sample: "true")
-MovieList.create(movie_id: 21, genre_id: 5, sample: "true")
-MovieList.create(movie_id: 22, genre_id: 5, sample: "true")
-MovieList.create(movie_id: 23, genre_id: 5, sample: "true")
+MovieList.create(movie_id: 19, genre_id: 5, sample: "false")
+MovieList.create(movie_id: 20, genre_id: 5, sample: "false")
+MovieList.create(movie_id: 21, genre_id: 5, sample: "false")
+MovieList.create(movie_id: 22, genre_id: 5, sample: "false")
+MovieList.create(movie_id: 23, genre_id: 5, sample: "false")
 
 MovieList.create(movie_id: 17, genre_id: 3, sample: "true")
 MovieList.create(movie_id: 18, genre_id: 3, sample: "true")
@@ -100,10 +120,127 @@ MovieList.create(movie_id: 20, genre_id: 3, sample: "true")
 MovieList.create(movie_id: 21, genre_id: 2, sample: "true")
 MovieList.create(movie_id: 22, genre_id: 2, sample: "true")
 MovieList.create(movie_id: 23, genre_id: 2, sample: "true")
+MovieList.create(movie_id: 22, genre_id: 2, sample: "true")
+MovieList.create(movie_id: 23, genre_id: 2, sample: "true")
 
 
-m = Movie.first 
-ph = open('https://s3-us-west-1.amazonaws.com/file-up-load-2-dev/Andrei+Rublev.jpg')
-v = open('https://s3-us-west-1.amazonaws.com/file-up-load-2-dev/Andrei+Rublev+.mp4')
-m.video.attach(io: v, filename: 'AndreiRublev.mp4')
-m.photo.attach(io: ph, filename: 'AndreiRublev.jpg')
+stalker = Movie.find(2)
+stalker_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/stalker.jpg')
+stalker_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/Stalker.mp4')
+stalker.video.attach(io: stalker_v, filename: 'stalker.mp4')
+stalker.photo.attach(io: stalker_p, filename: 'stalker.jpg')
+
+m = Movie.find(3)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/sayat-nova.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/The+Color+of+Pomegranates+.mp4')
+m.video.attach(io: m_v, filename: '3.mp4')
+m.photo.attach(io: m_p, filename: '3.jpg')
+
+m = Movie.find(4)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/dimoand+arm.jpg')
+m.photo.attach(io: m_p, filename: '4.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/The+Diamond+Arm.mp4')
+m.video.attach(io: m_v, filename: '4.mp4')
+
+m = Movie.find(5)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/ivan.jpg')
+m.photo.attach(io: m_p, filename: '5.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/Ivan+Vasilevich.mp4')
+m.video.attach(io: m_v, filename: '5.mp4')
+
+m = Movie.find(6)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/operY.jpg')
+m.photo.attach(io: m_p, filename: '6.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/Operation+Y.mp4')
+m.video.attach(io: m_v, filename: '6.mp4')
+
+m = Movie.find(8)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/office+roman.jpg')
+m.photo.attach(io: m_p, filename: '8.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/Office+romance+.mp4')
+m.video.attach(io: m_v, filename: '8.mp4')
+
+m = Movie.find(9)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/gentlemen+of+fortune.jpg')
+m.photo.attach(io: m_p, filename: '9.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/Gentlemen+of+Fortune.mp4')
+m.video.attach(io: m_v, filename: '9.mp4')
+
+m = Movie.find(10)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/irony+of+fate.jpg')
+m.photo.attach(io: m_p, filename: '10.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/Irony+of+Fate.mp4')
+m.video.attach(io: m_v, filename: '10.mp4')
+
+m = Movie.find(11)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/mimino.jpg')
+m.photo.attach(io: m_p, filename: '11.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/Mimino.mp4')
+m.video.attach(io: m_v, filename: '11.mp4')
+
+m = Movie.find(12)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/srtiped+trip.jpg')
+m.photo.attach(io: m_p, filename: '12.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/Striped+Trip.mp4')
+m.video.attach(io: m_v, filename: '12.mp4')
+
+m = Movie.find(13)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/beware+the+car.jpg')
+m.photo.attach(io: m_p, filename: '13.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/Beware+of+the+car.mp4')
+m.video.attach(io: m_v, filename: '13.mp4')
+
+m = Movie.find(14)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/leviathan.jpg')
+m.photo.attach(io: m_p, filename: '14.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/Leviathan+.mp4')
+m.video.attach(io: m_v, filename: '14.mp4')
+
+m = Movie.find(15)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/fool.jpg')
+m.photo.attach(io: m_p, filename: '14.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/The+Fool+.mp4')
+m.video.attach(io: m_v, filename: '14.mp4')
+
+m = Movie.find(16)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/silent+souls.jpg')
+m.photo.attach(io: m_p, filename: '16.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/SILENT+SOULS+.mp4')
+m.video.attach(io: m_v, filename: '16.mp4')
+
+m = Movie.find(17)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/the+brother+2.jpg')
+m.photo.attach(io: m_p, filename: '17.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/brother+2.mp4')
+m.video.attach(io: m_v, filename: '17.mp4')
+
+m = Movie.find(18)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/elena.jpg')
+m.photo.attach(io: m_p, filename: '18.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/Elena+.mp4')
+m.video.attach(io: m_v, filename: '18.mp4')
+
+m = Movie.find(19)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/the+return.jpg')
+m.photo.attach(io: m_p, filename: '19.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/The+Return+.mp4')
+m.video.attach(io: m_v, filename: '19.mp4')
+
+m = Movie.find(20)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/how+I+ended+this+summer.jpg')
+m.photo.attach(io: m_p, filename: '20.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/HOW+I+ENDED+THIS+SUMMER+.mp4')
+m.video.attach(io: m_v, filename: '20.mp4')
+
+m = Movie.find(22)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/the+banishment.jpg')
+m.photo.attach(io: m_p, filename: '22.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/Banishment.mp4')
+m.video.attach(io: m_v, filename: '22.mp4')
+
+m = Movie.find(23)
+m_p = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/the+tribe.jpg')
+m.photo.attach(io: m_p, filename: '23.jpg')
+m_v = open('https://s3-us-west-1.amazonaws.com/file-up-load-prod/The+Tribe+Trailer.mp4')
+m.video.attach(io: m_v, filename: '23.mp4')
+
