@@ -1,4 +1,6 @@
 class Api::GenresController < ApplicationController
+    before_action :ensure_login
+    
     def index 
         @sample = Genre.includes(:sample_movies)
         # @sample = Genre.includes(sample_movies: :actors)
@@ -53,20 +55,6 @@ class Api::GenresController < ApplicationController
         
         render :show
     end
-
-    private 
-
-    # def group_movie_by_genre(genres)
-    #     groups = Hash.new 
-    #     movies = Hash.new
-    #     genres.each do |genre|
-    #         groups[genre.name] ||= []
-
-    #         genre.sample_movies.each do |movie|
-    #             groups[genre.name] += [movie.id]
-    #             movies[movie.id] = movie
-    #         end
-    #     end
-    # end
+ 
 end
 

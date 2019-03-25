@@ -144,7 +144,7 @@ img {
 
 .genre-movie-play {
     width: 100%;
-    height: auto;
+    max-height: 800px;
     margin-bottom: 5px;
 
 }
@@ -200,18 +200,21 @@ img {
 }
 
 .move-arrow-left {
+   color: gray;
    display: block;
    position: relative;
    top: 160px;
    left: -1px;
    font-size: xx-large;
+//    padding-top: -2%;
 }
 
 .move-arrow-right {
+    color: gray;
     display: block;
     position: relative;
-    top: -160px;
-    right: -1260px;
+    top: -142px;
+    right: -94%;
     font-size: xx-large;
     
 }
@@ -324,5 +327,23 @@ img {
     color: white;
     margin-top: 25%;
     margin-left: 40%;
+}
+
+.empty-left-arrow {
+    display: block;
+    position: relative;
+    top: 160px;
+    left: -1px;
+    font-size: xx-large;
+    color: transparent;
+}
+
+.empty-rigth-arrow {
+    display: block;
+    position: relative;
+    top: -142px;
+    right: -94%;
+    font-size: xx-large;
+    color: transparent;
 }
 
