@@ -12,4 +12,7 @@ Move repository into the project.
 Add favicon. 
 Remove redux logger.
 
+SIGN UP FOR CLEARBIT CONNECT FOR JOB SEARCH
+
  
+Sign up for Anglelist
