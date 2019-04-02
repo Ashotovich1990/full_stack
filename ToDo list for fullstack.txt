@@ -1,4 +1,3 @@
-Add includes to active storage associations 
 Add go back, close video functionality for movie show page
 Add play, and my list and mute buttons to main movie display box, 
 Add GitHub and linked links in the footer, create a footer.
@@ -9,7 +8,7 @@ Create backend search, put throttle or debounce on the search box.
 Polish main page and genres CSS.  
 Create ReadMe.
 Move repository into the project. 
-Add favicon. 
+
 Remove redux logger.
 
 SIGN UP FOR CLEARBIT CONNECT FOR JOB SEARCH
