@@ -4,18 +4,18 @@ import {Redirect} from 'react-router-dom';
 class MoviePlay extends React.Component {
     constructor(props) {
         super(props);
-        this.state = { video: null, clicked: false, returnPath: "", msg: ""};
+        this.state = { video: null, clicked: false, returnPath: "", msg: "", goBackStyle: "go-back"};
         this.handleClick = this.handleClick.bind(this);
         this.handleMouseEnter = this.handleMouseEnter.bind(this);
         this.handleMouseLeave = this.handleMouseLeave.bind(this);
     }
 
 handleMouseEnter() {
-      this.setState({ msg: ' Go Back'});
+      this.setState({ msg: ' Go Back', goBackStyle: "go-back-big"});
 }
 
 handleMouseLeave() {
-    this.setState({ msg: ''});
+    this.setState({ msg: '', goBackStyle: "go-back" });
 }
 
 handleClick() {
@@ -31,10 +31,10 @@ handleClick() {
     if (this.props.movies[this.props.movieId || this.props.genreMovieId]) {
     return (
         <div>
-            <span className="go-back" onClick={this.handleClick}><i 
+            <span className={`${this.state.goBackStyle}`} onClick={this.handleClick}
             onMouseEnter={this.handleMouseEnter} 
-            onMouseLeave={this.handleMouseLeave}
-            class="fas fa-arrow-left"></i> {this.state.msg}</span>
+            onMouseLeave={this.handleMouseLeave}>
+            <i class="fas fa-arrow-left"></i> {this.state.msg}</span>
             <video className="movie-list-movie-play" controls>
             <source src={this.props.movies[this.props.movieId || this.props.genreMovieId].video} type="video/mp4"/>
           
