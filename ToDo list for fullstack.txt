@@ -1,6 +1,6 @@
 
 Add play, and my list and mute buttons to main movie display box, 
-Add GitHub and linked links in the footer, create a footer.
+
 Polish carousel hover effects. 
 Make actors table active, send actors info to the frontend.
 Add loader functionality in between switching genres and search results.

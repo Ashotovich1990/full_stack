@@ -7,7 +7,7 @@ import MovieDropbarContainer from './movies/movie_list_dropbar_container';
 class GenreIndexItem extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {hovered: null, browse: null, start: 0, end: 6, showArrows: false}
+    this.state = {hovered: null, browse: "", start: 0, end: 6, showArrows: false}
     this.onMouseEnterHandle = this.onMouseEnterHandle.bind(this)
     this.onMouseLeaveHandle = this.onMouseLeaveHandle.bind(this)
     this.onMouseEnterBrowse = this.onMouseEnterBrowse.bind(this)
@@ -30,10 +30,26 @@ class GenreIndexItem extends React.Component {
   }
 
   onMouseEnterBrowse() {
+    let str;
     if (this.props.genreId === '0') {
-      this.setState( {browse: 'open my list' });
+      str = 'open my list'
     } else {
-    this.setState( {browse: 'browse all' });
+      str = 'browse all' 
+    }
+    let time = 20;
+    this.setState( {browse: ""}, () => {
+    for (let i = 0; i < str.length; i++) {
+      time += 30
+      setTimeout(() => {
+        this.setState( {browse: this.state.browse + str[i] });
+      }, time)
+    }
+    })
+  }
+  
+  onMouseLeaveBrowse() {
+    if (this.state.browse === "browse all" || this.state.browse === "open my list") {
+      this.setState( {browse: "" });
     }
   }
 
@@ -42,9 +58,6 @@ class GenreIndexItem extends React.Component {
     scrollItem.scrollIntoView(false);
   }
 
-  onMouseLeaveBrowse() {
-    this.setState( {browse: null });
-  }
 
   handleScrollRight() {
     if (this.state.end <= this.props.movies.length) {
