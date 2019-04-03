@@ -46,7 +46,7 @@ class GenreIndexItem extends React.Component {
     } else {
       str = 'browse all' 
     }
-    let time = 20;
+    let time = 0;
     if (this.state.browse === "") {
       for (let i = 0; i < str.length; i++) {
         time += 30

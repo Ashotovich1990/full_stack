@@ -11,13 +11,26 @@ class MoviePlay extends React.Component {
     }
 
 handleMouseEnter() {
-      this.setState({ msg: ' Go Back', goBackStyle: "go-back-big"});
+    let str = " Go Back";
+    let time = 0;
+    if (this.state.msg === "") {
+        for (let i = 0; i < str.length; i++) {
+            time += 20
+            setTimeout(() => {
+            this.setState( {msg: this.state.msg + str[i] });
+            }, time)
+        }
+    }
+    this.setState({ goBackStyle: "go-back-big"});
 }
 
 handleMouseLeave() {
-    this.setState({ msg: '', goBackStyle: "go-back" });
+    if (this.state.msg === " Go Back") {
+        this.setState( {msg: "" });
+      }
+   this.setState({goBackStyle: "go-back" });
 }
-
+  
 handleClick() {
     this.setState({ clicked: true, returnPath: this.props.genrePageId === "main" ? "" : this.props.genrePageId})
 }
