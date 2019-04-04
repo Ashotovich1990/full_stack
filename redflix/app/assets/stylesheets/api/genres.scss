@@ -78,28 +78,38 @@ img {
        .dropbar-info-container {
           display: inherit;
           flex-direction: column;
+          position: relative;
+          top: 30px;
+          left: 22px;
+
+          h2 {
+            position: relative;
+            top: -20px;
+            font-size: 60px;
+            color: white;
+          }
        }
 
        .dropbar-poster-container {
           flex-direction: column;
        }
 
-       #movie-dropbar-description {
-           padding: 10%;
-           font-size: larger;
-           display: inline-flex;
-           top: 15%;
-           color: white;
-           z-index: 4;
-       }
+    //    #movie-dropbar-description {
+    //        padding: 10%;
+    //        font-size: larger;
+    //        display: inline-flex;
+    //        top: 15%;
+    //        color: white;
+    //        z-index: 4;
+    //    }
 
-       #movie-dropbar-title {
-            padding-top: 6%;
-            padding-left: 10%;
-            font-size: xx-large;
-            display: inline-flex;
-            color: white;
-       }
+    //    #movie-dropbar-title {
+    //         padding-top: 6%;
+    //         padding-left: 10%;
+    //         font-size: xx-large;
+    //         display: inline-flex;
+    //         color: white;
+    //    }
 
        #dropdown-close {
            color: gray;
@@ -117,27 +127,27 @@ img {
         z-index: -1;
        }
 
-       .dropdown-buttons {
-        display: flex;
-        margin-top: auto;
-        margin-bottom: 20%;
-        margin-left: 10%;
-        margin-right: 50px;
-        justify-content: space-between;
-        z-index: 5;
+    //    .dropdown-buttons {
+    //     display: flex;
+    //     margin-top: auto;
+    //     margin-bottom: 20%;
+    //     margin-left: 10%;
+    //     margin-right: 50px;
+    //     justify-content: space-between;
+    //     z-index: 5;
         
-       }
+    //    }
 
-       #add-movie-button, #remove-movie-button {
-           text-align: center;
-           padding-top: 10px;
-           font-size: 20px;
-           width: 150px;
-           height: 30px;
-           background: red;
-           border-radius: 3px;
+    //    #add-movie-button, #remove-movie-button {
+    //        text-align: center;
+    //        padding-top: 10px;
+    //        font-size: 20px;
+    //        width: 150px;
+    //        height: 30px;
+    //        background: red;
+    //        border-radius: 3px;
            
-       }
+    //    }
 
 
     }
@@ -210,14 +220,11 @@ img {
 }
 
 .sound-control {
-    position: absolute;
     border:1px solid white;    
     height: 40px;
     border-radius:50%;
     -moz-border-radius:50%;
     -webkit-border-radius:50%;
-    top: 470px;
-    right: 5%;
     width: 40px;
     font-size: 20px;
     text-align: center;
@@ -225,6 +232,28 @@ img {
     align-items: center;
     justify-content: center;
     z-index: 10;
+}
+
+.genre-movie-maturity-rating {
+    background: #00000066;
+    height: 40px;
+    width: 90px;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-left: 5px;
+    margin-left: 15px;
+    border-left: 5px solid gray;
+    font-size: 15px;
+}
+
+.sound-rating-container {
+    position: absolute;
+    top: 470px;
+    right: 0;
+    display: flex;
 }
 
 .movie-list-movie-play {

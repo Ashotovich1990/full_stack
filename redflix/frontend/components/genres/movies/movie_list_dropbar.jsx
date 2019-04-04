@@ -11,6 +11,7 @@ class MovieDropbar extends React.Component {
         this.handlePlay = this.handlePlay.bind(this);
         this.myListButton = this.myListButton.bind(this);
         this.renderButton = this.renderButton.bind(this);
+        this.renderInfoBox = this.renderInfoBox.bind(this);
     }
 
     handleClose() {
@@ -38,12 +39,39 @@ class MovieDropbar extends React.Component {
         };
     }
 
+    // renderButton() {
+    //     if (this.props.isOnList) {
+    //         return <div className='remove-movie-button' onClick={this.handleRemove}>Remove</div>
+    //     } else {
+    //         return <div className='add-movie-button' onClick={this.handleAdd}>Add</div>
+    //     }
+    // }
+
     renderButton() {
+        let icon;
+        let func;
         if (this.props.isOnList) {
-            return <div id='remove-movie-button' onClick={this.handleRemove}>Remove</div>
+            icon = <i class="fas fa-check"></i>;
+            func = this.handleRemove;
         } else {
-            return <div id='add-movie-button' onClick={this.handleAdd}>Add</div>
+            icon = <i class="fas fa-plus"></i>;
+            func = this.handleAdd;
         }
+        return <div className='genre-movie-button' onClick={func}><div>{icon} My List</div></div>
+    }
+
+    renderInfoBox(movie) {
+        return (
+            <div className='dropbar-info-container'>
+                <h2>{movie.title}</h2>
+                <div className="dropbar-movie-desc">{movie.description}</div>
+                <div className='dropdown-buttons'>
+                <div className="dropbar-movie-button"  onClick={this.handlePlay}>Play</div>
+                {this.renderButton()}
+                </div>
+            </div>
+        )
+
     }
 
 
@@ -52,19 +80,12 @@ class MovieDropbar extends React.Component {
             return <Redirect to={`/browse/watch/${this.props.dropDownMovie.movieId}`}/>
         }
 
-        const movie = this.props.movies[this.props.dropDownMovie.movieId]
+          const movie = this.props.movies[this.props.dropDownMovie.movieId]
 
           if ( movie && (this.props.genreId === this.props.dropDownMovie.genreId)) {
             return (
               <div id='movie-ad' className="movie-dropbar">
-               <div className='dropbar-info-container'>
-                 <div id="movie-dropbar-title">{movie.title}</div>
-                 <div id="movie-dropbar-description">{movie.description}</div>
-                 <div className='dropdown-buttons'>
-                    <div id='add-movie-button'  onClick={this.handlePlay}>Play</div>
-                    {this.renderButton()}
-                 </div>
-                </div>
+                 {this.renderInfoBox(movie)}
                 <div className='dropbar-poster-container'>
                     <img id='dropdown-poster' src={movie.poster}/>
                     <div id='dropdown-close' onClick={this.handleClose}><i className="fas fa-times"></i></div>
