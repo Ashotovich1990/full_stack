@@ -3,7 +3,7 @@
 Polish carousel hover effects. 
 Make actors table active, send actors info to the frontend.
 Add loader functionality in between switching genres and search results.
-Create backend search, put throttle or debounce on the search box.
+throttle or debounce on the search box.
 Polish main page and genres CSS.  
 Create ReadMe.
 Move repository into the project. 
@@ -14,3 +14,23 @@ SIGN UP FOR CLEARBIT CONNECT FOR JOB SEARCH
 
  
 Sign up for Anglelist
+
+Git set author 
+
+git filter-branch --env-filter '
+
+OLD_EMAIL="aramsargsyan9902gmail.com"
+CORRECT_NAME="Aram Sargsyan"
+CORRECT_EMAIL="aramsargsyan990@gmail.com"
+
+if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_COMMITTER_NAME="$CORRECT_NAME"
+    export GIT_COMMITTER_EMAIL="$CORRECT_EMAIL"
+fi
+if [ "$GIT_AUTHOR_EMAIL" = "$OLD_EMAIL" ]
+then
+    export GIT_AUTHOR_NAME="$CORRECT_NAME"
+    export GIT_AUTHOR_EMAIL="$CORRECT_EMAIL"
+fi
+' --tag-name-filter cat -- --branches --tags
