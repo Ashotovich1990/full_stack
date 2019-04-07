@@ -1,5 +1,4 @@
 
-Add play, and my list and mute buttons to main movie display box, 
 
 Polish carousel hover effects. 
 Make actors table active, send actors info to the frontend.
