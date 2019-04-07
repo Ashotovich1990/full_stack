@@ -24,4 +24,5 @@ const dropDownMovieReducer = (oldState = {movieId: null, genreId: null}, action)
     }
 }
 
+
 export default dropDownMovieReducer;
