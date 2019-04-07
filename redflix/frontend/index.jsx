@@ -56,19 +56,11 @@ document.addEventListener('DOMContentLoaded', ()=> {
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
 
-    const mainbottom = $('.genre-movie-box-container').offset().bottom;
+    function changeNavStyle () {
+        const nav = document.querySelector(".welcome-new");
+        this.scrollY <= 50 ? nav.style.background = "transparent" : nav.style.background = "rgb(20, 20, 20)";
+      }
+      
+    window.addEventListener("scroll", changeNavStyle, false);
 
-    $(window).on('scroll',function() {
-
-        const stop = Math.round($(window).scrollTop());
-
-        if (stop > mainbottom) {
-            $('.welcome-new').addClass('past-main');
-        } else {
-            $('.welcome-new').removeClass('past-main');
-        }
-
-    });
-    console.log(document.getElementById("main-logo"));
-    document.getElementById("main-logo").click()
 })

@@ -49,7 +49,7 @@ class Api::GenresController < ApplicationController
 
         @my_watchlist[0] = current_user.movie_ids
         if !@my_watchlist.empty?
-            @movies += Movie.with_attached_photo.with_attached_video.joins(:users).where(users: {id: current_user.id}) unless movie_params
+            @movies += Movie.with_attached_photo.with_attached_video.joins(:users).where(users: {id: current_user.id}) 
             @genre_names[0] = Genre.first.name
             @genre_lists[0] = @my_watchlist[0]
         end
