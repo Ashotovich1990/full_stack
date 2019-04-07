@@ -54,7 +54,21 @@ document.addEventListener('DOMContentLoaded', ()=> {
     window.getState = store.getState;
     window.dispatch = store.dispatch;
     const root = document.getElementById('root');
-    ReactDOM.render(<Root store={store} />, root)
+    ReactDOM.render(<Root store={store} />, root);
+
+    const mainbottom = $('.genre-movie-box-container').offset().bottom;
+
+    $(window).on('scroll',function() {
+
+        const stop = Math.round($(window).scrollTop());
+
+        if (stop > mainbottom) {
+            $('.welcome-new').addClass('past-main');
+        } else {
+            $('.welcome-new').removeClass('past-main');
+        }
+
+    });
     console.log(document.getElementById("main-logo"));
     document.getElementById("main-logo").click()
 })
