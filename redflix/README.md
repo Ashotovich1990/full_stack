@@ -6,7 +6,7 @@ Redflix is a single-page Netflix clone web-application, inspired by my love of R
 
 This project was built in two weeks, although I plan to improve it further more and add more features.
 
-#Features 
+# Features 
 
 ### Authentication
 
