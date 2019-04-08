@@ -86,12 +86,12 @@ This project was built in two weeks, although I plan to improve it further more 
 * The app heavily relies on React to create an engaging and interactive frontend. 
 * The main components are broken down into smaller ones. Like GenreIndexContainer includes GenreIndexItems,  which in their turn include MovieListItems.
 ![Image description](app/assets/images/genre-index-item.png)
-*  Those Lists represent movies of the specific genre organized in a carousel style. 
+*  Those lists represent movies of the specific genre organized in a carousel style. 
 ![Image description](app/assets/images/carousel.png).
 * Background posters for each movie are extracted from Active Storage, passed down the props and used for styling directly from inside the React Component.
 ![Image description](app/assets/images/background-photo-style.png).
 
-#Pages 
+# Pages 
 * Landing
 ![Image description](app/assets/images/landing.png).
 * Sing up/Sing In
